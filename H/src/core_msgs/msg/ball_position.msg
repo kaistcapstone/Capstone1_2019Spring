@@ -1,0 +1,15 @@
+Header header
+int32 size
+int32 num
+float32[] img_rx
+float32[] img_ry
+float32[] img_rc
+float32[] img_bx
+float32[] img_by
+float32[] img_bc
+float32[] img_gx
+float32[] img_gy
+float32[] img_gc
+float32[] img_basket_c
+float32[] img_basket_x
+float32[] img_basket_y

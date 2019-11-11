@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="webcam" type="webcam_node" name="webcam_node"/>
+    <node pkg="ball_detection" type="ball_detect_node" name="ball_detect_node"/>
+    <node pkg="data_integrate" type="data_integation_node" name="data_integation_node"/>
+</launch>

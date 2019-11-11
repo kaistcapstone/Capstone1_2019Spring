@@ -1,0 +1,28 @@
+<!-- Play raw OpenNI data from a bag and process it-->
+<launch>
+
+  <param name="use_sim_time" value="true"/>
+
+  <!-- Parameters -->
+  <arg name="bag_name" />
+  <arg name="manager_name" value="rgbd_manager"/>
+  <arg name="calib_path" default="$(find ccny_rgbd)/data/calibration_asus_xtion_pro"/> 
+  <arg name="publish_cloud" default="false"/>
+  
+  <!-- Nodelet manager -->
+  <node pkg="nodelet" type="nodelet" name="$(arg manager_name)" args="manager"
+        output="screen"/>
+
+  <!-- RGBD playback -->
+  <include file="$(find ccny_openni_launch)/launch/include/play.launch">       
+     <arg name="bag_name" value="$(arg bag_name)" />
+  </include>
+  
+  <!-- RGBD processing -->
+  <include file="$(find ccny_openni_launch)/launch/include/proc.launch">       
+     <arg name="manager_name"  value="$(arg manager_name)" />
+     <arg name="calib_path"    value="$(arg calib_path)" />
+     <arg name="publish_cloud" value="$(arg publish_cloud)" />
+  </include>
+           
+</launch>

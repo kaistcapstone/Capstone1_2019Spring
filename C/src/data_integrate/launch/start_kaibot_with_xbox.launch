@@ -1,0 +1,7 @@
+<launch>
+    <node pkg="image_transport_tutorial" type="my_publisher" name="my_publisher"/>  
+    <node pkg="ball_detection" type="ball_detect_1" name="ball_detect_1"/>
+    <node pkg="ball_detection" type="ball_detect_2" name="ball_detect_2"/>
+    <node pkg="ball_detection" type="ball_detect_3" name="ball_detect_3"/>
+    <node pkg="xbox_ctrl" type="xbox_ctrl_Client" name="xbox_ctrl_Client"/>
+</launch>
